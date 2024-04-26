@@ -19,4 +19,7 @@ jobs:
                 base: main
                 title: "demo for auto pr"
                 token: ${{ secrets.GITHUB_TOKEN}}
-                delete-branch: true
+                committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}
+                author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}
+                body:
+                    This is a PR to show
