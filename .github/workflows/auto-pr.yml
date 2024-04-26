@@ -1,0 +1,22 @@
+name: GitHub Action to create Pull request
+on:
+    push:
+        branches: 
+            - main
+
+jobs:
+    create-pr:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+            - name: extract git commit date
+              uses: rlespinasse/git-commit-data-action@v1
+            - name: raise pr
+              uses: peter-evans/create-pull-request@v6
+              with:
+                branch: "auto-pr-branch"
+                base: main
+                title: "demo for auto pr"
+                token: ${{ secrets.GITHUB_TOKEN}}
+                delete-branch: true
