@@ -21,7 +21,5 @@ jobs:
                 base: main
                 title: "demo for auto pr"
                 token: ${{ secrets.GITHUB_TOKEN}}
-                committer: "${{ env.GIT_COMMIT_AUTHOR }}"
-                author: "JC <kjayachandra2000@gmail.com>"
                 body:
                     This is a PR to show
