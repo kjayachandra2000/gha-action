@@ -16,7 +16,10 @@ jobs:
               run: |
                 export VERSION=${GITHUB_REF#refs/*/}
                 echo "VERSION=$VERSION" >> $GITHUB_ENV
-                echo Version: $VERSION 
+                echo Version: $VERSION
+            - name: Use the version
+              run: |
+                echo "Using version: $VERSION"                
             - name: update author information
               run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }}  > AUTHOR
             - name: raise pr
