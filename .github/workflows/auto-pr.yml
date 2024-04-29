@@ -1,8 +1,8 @@
 name: GitHub Action to create Pull request
 on:
     push:
-        branches: 
-            - main
+      tags: 
+        - '*'
 
 jobs:
     create-pr:
